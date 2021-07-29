@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How's my money doing?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>How's my money doing?</h1>
+    <div>
+      <form>
+        <p>
+          <label for="stock-code">Enter Stock Name: </label>
+          <input type="text" id="stock-name" list="stocks" />
+          <datalist id="stocks"></datalist>
+        </p>
+        <p>
+          <label for="purchase-price">Enter Stock Purchase Price: </label>
+          <input
+            type="number"
+            name="stock-purchase-price"
+            id="purchase-price"
+          />
+        </p>
+        <p>
+          <label for="stock-quantity">Enter Stock Quantity: </label>
+          <input type="number" name="stock-quantity" id="stock-quantity" />
+        </p>
+        <p>
+          <button id="check">Check</button>
+        </p>
+      </form>
+      <p id="result-text"></p>
+      <!-- <p id="input-test"></p> -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- <input list="browsers">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist> -->
