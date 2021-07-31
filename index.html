@@ -5,36 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How's my money doing?</title>
+    <link rel="icon" href="assets/stock.ico" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>How's my money doing?</h1>
-    <div>
-      <form>
-        <p>
-          <label for="stock-code">Enter Stock Name: </label>
-          <input type="text" id="stock-name" list="stocks" />
-          <datalist id="stocks"></datalist>
-        </p>
-        <p>
-          <label for="purchase-price">Enter Stock Purchase Price: </label>
-          <input
-            type="number"
-            name="stock-purchase-price"
-            id="purchase-price"
-          />
-        </p>
-        <p>
-          <label for="stock-quantity">Enter Stock Quantity: </label>
-          <input type="number" name="stock-quantity" id="stock-quantity" />
-        </p>
-        <p>
-          <button id="check">Check</button>
-        </p>
-      </form>
-      <p id="result-text"></p>
-      <!-- <p id="input-test"></p> -->
-    </div>
+      <div id="banner">
+        <h1 id="heading">How's my money doing?</h1>
+        <img
+          id="hero-img"
+          src="assets/hero-img.svg"
+          alt="How's my money doing?"
+        />
+        <a id="main-link" href="http://127.0.0.1:5501/index.html#main-app"
+        >Let's Check!</a
+      >
+      </div>
+      <div id="main-app">  
+        <form class="form-style">
+            <label for="stock-code" class="label-style">Enter Stock Name: </label>
+            <input 
+              type="text" 
+              id="stock-name" 
+              list="stocks" 
+              placeholder="Search for your Stocks" 
+              class="input-style"/>
+            <datalist id="stocks"></datalist>
+          
+          
+            <label for="purchase-price" class="label-style">Enter Stock Purchase Price: </label>
+            <input
+              type="number"
+              name="stock-purchase-price"
+              id="purchase-price"
+              class="input-style"
+            />
+          
+          
+            <label for="stock-quantity" class="label-style">Enter Stock Quantity: </label>
+            <input 
+              type="number" 
+              name="stock-quantity" 
+              id="stock-quantity" 
+              class="input-style"/>
+          
+      
+            <button id="check" class="check-style">Check</button>
+        </form>
+       <p id="result-text" class="result-style"></p>
+        <!-- <p id="input-test"></p> -->
+     </div>
     <script src="script.js"></script>
   </body>
 </html>

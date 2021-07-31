@@ -8,31 +8,48 @@ var resultText = document.querySelector('#result-text')
 
 function giveResult(currentPriceString, purchasePrice, stockQuantity) {
   var currentPrice = parseFloat(currentPriceString)
-  var moneySpent = purchasePrice * stockQuantity
+  // var moneySpent = purchasePrice * stockQuantity
 
-  console.log(currentPrice)
-  console.log(typeof(currentPrice))
-  console.log(purchasePrice)
-  console.log(typeof(purchasePrice))
-  console.log(stockQuantity)
-  console.log(typeof(stockQuantity))
-  console.log(moneySpent)
-  console.log(typeof(moneySpent))
+  // console.log(currentPrice)
+  // console.log(typeof(currentPrice))
+  // console.log(purchasePrice)
+  // console.log(typeof(purchasePrice))
+  // console.log(stockQuantity)
+  // console.log(typeof(stockQuantity))
+  // console.log(moneySpent)
+  // console.log(typeof(moneySpent))
 
   if (currentPrice > purchasePrice) {
-    var percentProfit = (((currentPrice - purchasePrice) / purchasePrice) * 100).toFixed(2)
-    var absoluteProfit = ((currentPrice - purchasePrice) * stockQuantity).toFixed(2)
+    var percentProfit = (
+      ((currentPrice - purchasePrice) / purchasePrice) *
+      100
+    ).toFixed(2)
+    var absoluteProfit = (
+      (currentPrice - purchasePrice) *
+      stockQuantity
+    ).toFixed(2)
     console.log('Percent Profit:', percentProfit)
     console.log('Absolute Profit:', absoluteProfit)
-    resultText.textContent = 'You gained ' + percentProfit + '%. Your total profit is ' + absoluteProfit + '.'
+    resultText.textContent =
+      'You gained ' +
+      percentProfit +
+      '%. Your total profit is ' +
+      absoluteProfit +
+      '.'
   } else if (currentPrice < purchasePrice) {
-    var percentLoss = (((purchasePrice - currentPrice) / purchasePrice) * 100).toFixed(2)
-    var absoluteLoss = ((purchasePrice - currentPrice) * stockQuantity).toFixed(2)
+    var percentLoss = (
+      ((purchasePrice - currentPrice) / purchasePrice) *
+      100
+    ).toFixed(2)
+    var absoluteLoss = ((purchasePrice - currentPrice) * stockQuantity).toFixed(
+      2
+    )
     console.log('Percent Loss:', percentLoss)
     console.log('Absolute Loss:', absoluteLoss)
-    resultText.textContent = 'You lost ' + percentLoss + '%. Your total loss is ' + absoluteLoss + '.'
+    resultText.textContent =
+      'You lost ' + percentLoss + '%. Your total loss is ' + absoluteLoss + '.'
   } else if (currentPrice === purchasePrice) {
-
+    resultText.textContent = 'Perfectly balanced!'
   }
 }
 
@@ -85,7 +102,11 @@ function inputHandler(event) {
       response.json()
     )
     .then((resJSON) =>
-      giveResult(resJSON['Global Quote']['08. previous close'], purchasePrice, stockQuantity)
+      giveResult(
+        resJSON['Global Quote']['08. previous close'],
+        purchasePrice,
+        stockQuantity
+      )
     )
 }
 
