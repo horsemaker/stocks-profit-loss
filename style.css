@@ -44,7 +44,7 @@ body {
 
 #main-link {
     display: block;
-    max-width: 20vw;
+    max-width: 50%;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border;
@@ -124,7 +124,7 @@ body {
     width: 30%;
     align-self: center;
     cursor: pointer;
-    max-width: 18vw;
+    max-width: 50%;
     /* box-shadow: 5px 5px 20px rgb(73, 73, 73); */
 }
 
