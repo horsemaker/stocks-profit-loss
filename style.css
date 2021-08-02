@@ -9,7 +9,15 @@
 #191919
 #383839
 #EAEAEA
-#95F1E4 */
+#95F1E4
+#00FF00
+#2EFF2E
+#5CFF5C 
+#8AFF8A
+#D10000
+#FF0000
+#FF2E2E
+*/
 
 body {
     margin-top: 0;
@@ -84,7 +92,6 @@ body {
 }
 
 .stock-option {
-
     font-size: 0.5rem;
 }
 
@@ -92,7 +99,8 @@ body {
     display: block;
     margin: auto;
     width: 55%;
-    padding: 0.3125rem 0.3125rem;
+    line-height: 28px;
+    padding: 0.5rem 0.5rem;
     background-color: var(--quaternary-color); 
     border: 2px solid transparent;
     border-radius: 5px;
