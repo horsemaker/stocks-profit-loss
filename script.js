@@ -6,6 +6,7 @@ var checkAction = document.querySelector('#check')
 var resultText = document.querySelector('#result-text')
 // var inputTest = document.querySelector('#input-test')
 
+
 function giveResult(currentPriceString, purchasePrice, stockQuantity) {
   var currentPrice = parseFloat(currentPriceString)
   // var moneySpent = purchasePrice * stockQuantity
@@ -28,8 +29,9 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
       (currentPrice - purchasePrice) *
       stockQuantity
     ).toFixed(2)
-    console.log('Percent Profit:', percentProfit)
-    console.log('Absolute Profit:', absoluteProfit)
+    // console.log('Percent Profit:', percentProfit)
+    // console.log('Absolute Profit:', absoluteProfit)
+    // resultText.style.zIndex = '1'
     resultText.textContent =
       'You gained ' +
       percentProfit +
@@ -44,8 +46,8 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     var absoluteLoss = ((purchasePrice - currentPrice) * stockQuantity).toFixed(
       2
     )
-    console.log('Percent Loss:', percentLoss)
-    console.log('Absolute Loss:', absoluteLoss)
+    // console.log('Percent Loss:', percentLoss)
+    // console.log('Absolute Loss:', absoluteLoss)
     resultText.textContent =
       'You lost ' + percentLoss + '%. Your total loss is ' + absoluteLoss + '.'
   } else if (currentPrice === purchasePrice) {
