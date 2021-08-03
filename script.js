@@ -5,7 +5,11 @@ var stockQuantityInput = document.querySelector('#stock-quantity')
 var checkAction = document.querySelector('#check')
 var resultText = document.querySelector('#result-text')
 // var inputTest = document.querySelector('#input-test')
-
+// var bodyElement = document.getElementsByTagName('body')[0]
+// var emoji = document.querySelector('#emoji')
+var profitEmojis = document.querySelector('#profitEmojis')
+var lossEmojis = document.querySelector('#lossEmojis')
+var root = document.documentElement
 
 function giveResult(currentPriceString, purchasePrice, stockQuantity) {
   var currentPrice = parseFloat(currentPriceString)
@@ -32,6 +36,15 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     // console.log('Percent Profit:', percentProfit)
     // console.log('Absolute Profit:', absoluteProfit)
     // resultText.style.zIndex = '1'
+    // event.preventDefault()
+    // bodyElement.innerHTML += ``
+    lossEmojis.style.display = 'none'
+    root.style.setProperty('--primary-color', 'green')
+    profitEmojis.style.display = 'block'
+
+    setTimeout(function () {
+      profitEmojis.style.display = 'none'
+    }, 20000)
     resultText.textContent =
       'You gained ' +
       percentProfit +
@@ -48,6 +61,13 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     )
     // console.log('Percent Loss:', percentLoss)
     // console.log('Absolute Loss:', absoluteLoss)
+    profitEmojis.style.display = 'none'
+    root.style.setProperty('--primary-color', 'red')
+    lossEmojis.style.display = 'block'
+
+    setTimeout(function () {
+      lossEmojis.style.display = 'none'
+    }, 15000)
     resultText.textContent =
       'You lost ' + percentLoss + '%. Your total loss is ' + absoluteLoss + '.'
   } else if (currentPrice === purchasePrice) {
