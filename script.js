@@ -3,6 +3,7 @@ var stockList = document.querySelector('#stocks')
 var purchasePriceInput = document.querySelector('#purchase-price')
 var stockQuantityInput = document.querySelector('#stock-quantity')
 var checkAction = document.querySelector('#check')
+var result = document.querySelector('#result')
 var resultText = document.querySelector('#result-text')
 // var inputTest = document.querySelector('#input-test')
 // var bodyElement = document.getElementsByTagName('body')[0]
@@ -39,8 +40,12 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     // event.preventDefault()
     // bodyElement.innerHTML += ``
     lossEmojis.style.display = 'none'
-    root.style.setProperty('--primary-color', 'green')
+    root.style.setProperty('--primary-color', '#8AFF8A')
+    root.style.setProperty('--secondary-color', '#065F46')
+    root.style.setProperty('--tertiary-color', '#064E3B')
+    root.style.setProperty('--quinary-color', '#064E3B')
     profitEmojis.style.display = 'block'
+    result.style.display = 'block'
 
     setTimeout(function () {
       profitEmojis.style.display = 'none'
@@ -62,8 +67,12 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     // console.log('Percent Loss:', percentLoss)
     // console.log('Absolute Loss:', absoluteLoss)
     profitEmojis.style.display = 'none'
-    root.style.setProperty('--primary-color', 'red')
+    root.style.setProperty('--primary-color', '#EF4444')
+    root.style.setProperty('--secondary-color', '#991B1B')
+    root.style.setProperty('--tertiary-color', '#B91C1C')
+    root.style.setProperty('--quinary-color', '#7F1D1D')
     lossEmojis.style.display = 'block'
+    result.style.display = 'block'
 
     setTimeout(function () {
       lossEmojis.style.display = 'none'
@@ -71,6 +80,7 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     resultText.textContent =
       'You lost ' + percentLoss + '%. Your total loss is ' + absoluteLoss + '.'
   } else if (currentPrice === purchasePrice) {
+    result.style.display = 'block'
     resultText.textContent = 'Perfectly balanced!'
   }
 }

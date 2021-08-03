@@ -2,8 +2,9 @@
 :root {
   --primary-color: #191919;
   --secondary-color: #1accfa;
-  --tertiary-color: #383839;
+  --tertiary-color: #191919;
   --quaternary-color: #eaeaea;
+  --quinary-color: #007896;
 }
 /* #1ACCFA
 #191919
@@ -47,7 +48,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10vh;
+  margin-bottom: 11vh;
 }
 
 #main-link {
@@ -107,7 +108,7 @@ body {
   outline: none;
   font-size: 1rem;
   font-weight: 700;
-  color: #007896;
+  color: var(--quinary-color);
   text-align: start;
   cursor: pointer;
   box-shadow: 5px 5px 20px rgb(49, 49, 49);
@@ -116,7 +117,7 @@ body {
 ::placeholder {
   font-family: 'Ubuntu Mono', monospace;
   font-size: 0.85rem;
-  color: #007896;
+  color: var(--quinary-color);
 }
 
 .check-style {
@@ -136,14 +137,28 @@ body {
   /* box-shadow: 5px 5px 20px rgb(73, 73, 73); */
 }
 
+#result {
+  margin-top: 5vh;
+  max-width: 58vw;
+  border: 1px solid var(--quaternary-color);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5rem;
+}
+
 .result-style {
   box-sizing: border-box;
   /* border: 2px solid; */
-  border-radius: 5px;
+  border-radius: 0.5rem;
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
   color: var(--quaternary-color);
+  padding: 1rem;
+  background-color: var(--tertiary-color);
+  max-width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .emoji {
@@ -204,7 +219,7 @@ body {
 .emoji {
   position: fixed;
   top: -10%;
-  z-index: 99999;
+  z-index: 999;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
