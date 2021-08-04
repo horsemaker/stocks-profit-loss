@@ -1,3 +1,4 @@
+var heroImg = document.querySelector('#hero-img')
 var stockNameInput = document.querySelector('#stock-name')
 var stockList = document.querySelector('#stocks')
 var purchasePriceInput = document.querySelector('#purchase-price')
@@ -44,12 +45,13 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     root.style.setProperty('--secondary-color', '#065F46')
     root.style.setProperty('--tertiary-color', '#064E3B')
     root.style.setProperty('--quinary-color', '#064E3B')
+    heroImg.src = 'assets/profit.svg'
     profitEmojis.style.display = 'block'
     result.style.display = 'block'
 
     setTimeout(function () {
       profitEmojis.style.display = 'none'
-    }, 20000)
+    }, 30000)
     resultText.textContent =
       'You gained ' +
       percentProfit +
@@ -71,12 +73,13 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     root.style.setProperty('--secondary-color', '#991B1B')
     root.style.setProperty('--tertiary-color', '#B91C1C')
     root.style.setProperty('--quinary-color', '#7F1D1D')
+    heroImg.src = 'assets/loss.svg'
     lossEmojis.style.display = 'block'
     result.style.display = 'block'
 
     setTimeout(function () {
       lossEmojis.style.display = 'none'
-    }, 15000)
+    }, 30000)
     resultText.textContent =
       'You lost ' + percentLoss + '%. Your total loss is ' + absoluteLoss + '.'
   } else if (currentPrice === purchasePrice) {
