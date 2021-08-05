@@ -40,12 +40,16 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     // resultText.style.zIndex = '1'
     // event.preventDefault()
     // bodyElement.innerHTML += ``
+
+    if (percentProfit >= 50) {
+      root.style.setProperty('--primary-color', '#8AFF8A')
+      root.style.setProperty('--secondary-color', '#065F46')
+      root.style.setProperty('--tertiary-color', '#064E3B')
+      root.style.setProperty('--quinary-color', '#064E3B')
+      heroImg.src = 'assets/profit.svg'
+    }
+
     lossEmojis.style.display = 'none'
-    root.style.setProperty('--primary-color', '#8AFF8A')
-    root.style.setProperty('--secondary-color', '#065F46')
-    root.style.setProperty('--tertiary-color', '#064E3B')
-    root.style.setProperty('--quinary-color', '#064E3B')
-    heroImg.src = 'assets/profit.svg'
     profitEmojis.style.display = 'block'
     result.style.display = 'block'
 
@@ -68,12 +72,16 @@ function giveResult(currentPriceString, purchasePrice, stockQuantity) {
     )
     // console.log('Percent Loss:', percentLoss)
     // console.log('Absolute Loss:', absoluteLoss)
+
+    if (percentLoss >= 50) {
+      root.style.setProperty('--primary-color', '#EF4444')
+      root.style.setProperty('--secondary-color', '#991B1B')
+      root.style.setProperty('--tertiary-color', '#B91C1C')
+      root.style.setProperty('--quinary-color', '#7F1D1D')
+      heroImg.src = 'assets/loss.svg'
+    }
+
     profitEmojis.style.display = 'none'
-    root.style.setProperty('--primary-color', '#EF4444')
-    root.style.setProperty('--secondary-color', '#991B1B')
-    root.style.setProperty('--tertiary-color', '#B91C1C')
-    root.style.setProperty('--quinary-color', '#7F1D1D')
-    heroImg.src = 'assets/loss.svg'
     lossEmojis.style.display = 'block'
     result.style.display = 'block'
 
