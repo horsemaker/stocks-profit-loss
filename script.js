@@ -111,6 +111,16 @@ function inputHandler(event) {
   // console.log(stockQuantityInput.value)
   // console.log(typeof(stockQuantityInput.value))
 
+  if (!stockNameInput.value) {
+    alert("Enter a valid stock name!")
+    return
+  }
+
+  if (!purchasePriceInput.value || !stockQuantityInput.value) {
+    alert("Please enter valid values in all the fields!")
+    return
+  }
+
   var stockName = stockNameInput.value
   var stockDetails = stockName.split(' - ')
   // console.log(stockDetails)
@@ -119,6 +129,11 @@ function inputHandler(event) {
   // console.log(typeof(stockCode))
   var purchasePrice = parseFloat(purchasePriceInput.value)
   var stockQuantity = parseInt(stockQuantityInput.value)
+
+  if (purchasePrice <= 0 || stockQuantity <= 0) {
+    alert("Values can't be 0 or less than 0!")
+    return
+  }
 
   // console.log(stockCode)
   // console.log(typeof(stockCode))
